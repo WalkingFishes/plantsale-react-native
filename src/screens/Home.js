@@ -7,14 +7,14 @@ const Home = ( {navigation} ) => {
             <Text>Home</Text>
             <TouchableOpacity
                 style={styles.button}
-                onPress={()=> { navigation.navigate("Home_to_Plants") }} >
+                onPress={()=> { navigation.navigate("Home_to_Plants", {title: "Plants List"}) }} >
                 <View>
                     <Text style={styles.buttonText}>Plants</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.button}
-                onPress={()=> { navigation.navigate("Home_to_Order") }} >
+                onPress={()=> { navigation.navigate("Home_to_Order", {title: "My Order"}) }} >
                 <View>
                     <Text style={styles.buttonText}>View Order</Text>
                 </View>
