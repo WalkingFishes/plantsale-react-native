@@ -1,13 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Home from './src/screens/Home';
+import Order from './src/screens/Order';
+import Plants from './src/screens/Plants';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="App_to_Home"
+                screenOptions={{
+                    headerTintColor: 'white',
+                    headerStyle: {backgroundColor: 'green'}
+                }}>
+                <Stack.Screen
+                    name="App_to_Home"
+                    options={{
+                        title: 'Plant Sale',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                            fontSize: 30
+                        }
+                    }}
+                    component={Home}
+                />
+                <Stack.Screen
+                    name="Home_to_Plants"
+                    component={Plants}
+                    option={ ( {route} ) => ({title: "Plants"})}
+                />
+                <Stack.Screen
+                    name="Home_to_Order"
+                    component={Order}
+                    option={ ( {route} ) => ({title: "My Order"})}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
   );
 }
 
