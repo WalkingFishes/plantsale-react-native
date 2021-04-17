@@ -1,17 +1,17 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from './src/screens/Home';
-import Order from './src/screens/Order';
-import Plants from './src/screens/Plants';
+import Home from './src/components/Home';
+import Order from './src/components/Order';
+import Plants from './src/components/Plants';
 
 const Stack = createStackNavigator();
 
 export default function App() {
     return (
+
         <NavigationContainer>
             <Stack.Navigator
                 initialRouteName="App_to_Home"
@@ -47,12 +47,3 @@ export default function App() {
         </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
