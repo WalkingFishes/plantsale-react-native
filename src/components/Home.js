@@ -7,7 +7,7 @@ const Home = ( {navigation} ) => {
         <SafeAreaView style={styles.mainView}>
             <Image
                 style={styles.logo}
-                source={require("../../assets/purple-fountain-grass1024x512.jpg")}/>
+                source={require("../images/purple-fountain-grass1024x512.jpg")}/>
             {/* <Text>Home</Text> */}
             <TouchableOpacity
                 style={styles.touchableView}
