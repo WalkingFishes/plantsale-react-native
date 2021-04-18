@@ -14,7 +14,8 @@ export default function App() {
 
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="App_to_Home"
+                // initialRouteName="App_to_Home"
+                initialRouteName="Home_to_Plants"
                 screenOptions={{
                     headerTintColor: 'white',
                     headerStyle: {backgroundColor: 'green'},
@@ -35,8 +36,15 @@ export default function App() {
                 />
                 <Stack.Screen
                     name="Home_to_Plants"
+                    options={{
+                        title: 'Plants',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                            fontSize: 30
+                        }
+                    }}
                     component={Plants}
-                    options={ ( {route} ) => ({title: route.params.title})}
+                    // options={ ( {route} ) => ({title: route.params.title})}
                 />
                 <Stack.Screen
                     name="Home_to_Order"

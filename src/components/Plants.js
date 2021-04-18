@@ -1,13 +1,14 @@
 import React from 'react';
-import { Button, View, Text, StyleSheet, SectionList } from 'react-native';
+import { Button, View, Text, StyleSheet, SectionList, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from '../shared/sharedStyles';
 import { PLANTS } from '../shared/plants';
+import { PRICING } from '../shared/pricing';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
 const Plants = ( {navigation, route} ) => {
-    const title = route.params.title;
+    // const title = route.params.title;
     // console.log(route);
     return (
         <View>
@@ -25,7 +26,7 @@ const Plants = ( {navigation, route} ) => {
                 renderItem={renderPlant}
                 renderSectionHeader={renderSectionHeader}
                 keyExtractor={(item, index) => index}
-                ListHeaderComponent={HeaderComponent}
+                // ListHeaderComponent={HeaderComponent}
                 ListFooterComponent={FooterComponent}
             />
         </View>
@@ -41,10 +42,30 @@ const renderSectionHeader = ({section}) => {
 }
 
 const renderPlant = ({item, index}) => {
+    const plantImage=require('../images/' + item.variety[0].image);
+    let varietiesString;
+    if (item.variety.length > 1) {
+        varietiesString = item.variety.length + " varieties";
+    } else {
+        varietiesString = item.variety[0].name;
+    }
+    const pricingGroup = PRICING.filter(
+        (group) => group.container.name === item.container
+    )[0];
+    const priceString = "Price - $" + (pricingGroup.container.price / 100).toFixed(2);
+    const containerString = pricingGroup.container.description;
+        // item.variety.length + " varieties";
     return (
         <View key={index} style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>{'Plant: ' + item.name}</Text>
-            <Text style={styles.sectionDescription}>{'Sun: ' + item.sun}</Text>
+            <Image
+                style={styles.sectionImage}
+                source={plantImage}
+            />
+            <Text style={styles.sectionDescription}>{item.sun}</Text>
+            <Text style={styles.sectionTitle}>{item.name}</Text>
+            <Text style={styles.sectionDescription}>{varietiesString}</Text>
+            <Text style={styles.sectionDescription}>{priceString}</Text>
+            <Text style={styles.sectionDescription}>{containerString}</Text>
         </View>
     );
 }
