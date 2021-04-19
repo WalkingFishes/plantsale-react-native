@@ -2,7 +2,7 @@ export const PLANTS = [
   {
     title: "Flats",
     group: "flat",
-    image: "flats/dahliaMixed512x384.jpg",
+    image: require("../images/flats/dahliaMixed512x384.jpg"),
     description:
       "A variety of annuals that are guaranteed to start your garden blooming. Choose from an assortment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom for you all summer.",
     shortDescription:
@@ -15,11 +15,11 @@ export const PLANTS = [
       sun: "full sun",
       group: "flat",
       variety: [
-        { name: "Mixed", image: "flats/alyssumMixed512x138.jpg" },
-        { name: "White", image: "flats/alyssumWhite512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/alyssumMixed512x138.jpg") },
+        { name: "White", image: require("../images/flats/alyssumWhite512x384.jpg") },
         {
           name: "Purple",
-          image: "flats/allysumPurple512x384.jpg",
+          image: require("../images/flats/allysumPurple512x384.jpg"),
         },
       ],
       description:
@@ -34,17 +34,17 @@ export const PLANTS = [
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Mixed", image: "flats/begoniaMixed512x384.jpg" },
-        { name: "White", image: "flats/begoniaWhite512x384.jpg" },
-        { name: "Pink", image: "flats/begoniaPink512x384.jpg" },
-        { name: "Red", image: "flats/begoniaRed512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/begoniaMixed512x384.jpg") },
+        { name: "White", image: require("../images/flats/begoniaWhite512x384.jpg") },
+        { name: "Pink", image: require("../images/flats/begoniaPink512x384.jpg") },
+        { name: "Red", image: require("../images/flats/begoniaRed512x384.jpg") },
         {
           name: "Pink bronze leaf",
-          image: "flats/begoniaPinkBronzeLeaf512x384.jpg",
+          image: require("../images/flats/begoniaPinkBronzeLeaf512x384.jpg"),
         },
         {
           name: "Red bronze leaf",
-          image: "flats/begoniaRedBronzeLeaf512x384.jpg",
+          image: require("../images/flats/begoniaRedBronzeLeaf512x384.jpg"),
         },
       ],
     },
@@ -59,11 +59,11 @@ export const PLANTS = [
       variety: [
         {
           name: "Mixed",
-          image: "flats/coleusWizardMix512x384.jpg",
+          image: require("../images/flats/coleusWizardMix512x384.jpg"),
         },
         {
           name: "Scarlet",
-          image: "flats/coleusScarlet512x384.jpg",
+          image: require("../images/flats/coleusScarlet512x384.jpg"),
         },
       ],
     },
@@ -76,7 +76,7 @@ export const PLANTS = [
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Mixed", image: "flats/dahliaMixed512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/dahliaMixed512x384.jpg") },
       ],
     },
     {
@@ -88,8 +88,8 @@ export const PLANTS = [
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Mixed", image: "flats/dianthusMixed512x384.jpg" },
-        { name: "Red", image: "flats/dianthusRed512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/dianthusMixed512x384.jpg") },
+        { name: "Red", image: require("../images/flats/dianthusRed512x384.jpg") },
       ],
     },
     {
@@ -101,7 +101,7 @@ export const PLANTS = [
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Silver", image: "flats/dustyMiller512x384.jpg" },
+        { name: "Silver", image: require("../images/flats/dustyMiller512x384.jpg") },
       ],
     },
     {
@@ -115,24 +115,24 @@ export const PLANTS = [
       variety: [
         {
           name: "Dazzler mixed",
-          image: "flats/impatiensPastelMix512x384.jpg",
+          image: require("../images/flats/impatiensPastelMix512x384.jpg"),
         },
         {
           name: "White",
-          image: "flats/impatiensWhite512x384.jpg",
+          image: require("../images/flats/impatiensWhite512x384.jpg"),
         },
-        { name: "Red", image: "flats/impatiensRed512x384.jpg" },
+        { name: "Red", image: require("../images/flats/impatiensRed512x384.jpg") },
         {
           name: "Salmom",
-          image: "flats/impatiensSalmon512x384.jpg",
+          image: require("../images/flats/impatiensSalmon512x384.jpg"),
         },
         {
           name: "Violet",
-          image: "flats/impatiensViolet512x384.jpg",
+          image: require("../images/flats/impatiensViolet512x384.jpg"),
         },
         {
           name: "Hot pink",
-          image: "flats/impatiensPink512x384.jpg",
+          image: require("../images/flats/impatiensPink512x384.jpg"),
         },
       ],
     },
@@ -147,15 +147,15 @@ export const PLANTS = [
       variety: [
         {
           name: "Bi-color",
-          image: "flats/marigoldMixed512x384.jpg",
+          image: require("../images/flats/marigoldMixed512x384.jpg"),
         },
         {
           name: "Yellow",
-          image: "flats/marigoldYellow512x384.jpg",
+          image: require("../images/flats/marigoldYellow512x384.jpg"),
         },
         {
           name: "Orange",
-          image: "flats/marigoldOrange512x384.jpg",
+          image: require("../images/flats/marigoldOrange512x384.jpg"),
         },
       ],
     },
@@ -168,7 +168,7 @@ export const PLANTS = [
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Mixed", image: "flats/mossRoseMixed512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/mossRoseMixed512x384.jpg") },
       ],
     },
     {
@@ -176,21 +176,20 @@ export const PLANTS = [
       name: "Petunia",
       container: "flat",
       sun: "full sun",
-      group: "flat",
-      description:
+      group: "flat", description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Mixed", image: "flats/petuniaMixed512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/petuniaMixed512x384.jpg") },
         {
           name: "Midnight blue",
-          image: "flats/petuniaMidnight512x384.jpg",
+          image: require("../images/flats/petuniaMidnight512x384.jpg"),
         },
-        { name: "Pink", image: "flats/petuniaPink512x384.jpg" },
-        { name: "Red", image: "flats/petuniaRed512x384.jpg" },
-        { name: "White", image: "flats/petuniaWhite512x384.jpg" },
+        { name: "Pink", image: require("../images/flats/petuniaPink512x384.jpg") },
+        { name: "Red", image: require("../images/flats/petuniaRed512x384.jpg") },
+        { name: "White", image: require("../images/flats/petuniaWhite512x384.jpg") },
         {
           name: "Yellow",
-          image: "flats/petuniaYellow512x384.jpg",
+          image: require("../images/flats/petuniaYellow512x384.jpg"),
         },
       ],
     },
@@ -205,9 +204,9 @@ export const PLANTS = [
       variety: [
         {
           name: "Victoria blue",
-          image: "flats/salviaVictoriaBlue512x384.jpg",
+          image: require("../images/flats/salviaVictoriaBlue512x384.jpg"),
         },
-        { name: "Red", image: "flats/salviaRed512x384.jpg" },
+        { name: "Red", image: require("../images/flats/salviaRed512x384.jpg") },
       ],
     },
     {
@@ -221,11 +220,11 @@ export const PLANTS = [
       variety: [
         {
           name: "Dwarf mixed",
-          image: "flats/snapDragonMix512x384.jpg",
+          image: require("../images/flats/snapDragonMix512x384.jpg"),
         },
         {
           name: "Tall mixed",
-          image: "flats/snapDragonsTall512x384.jpg",
+          image: require("../images/flats/snapDragonsTall512x384.jpg"),
         },
       ],
     },
@@ -238,7 +237,7 @@ export const PLANTS = [
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Mixed", image: "flats/verbenaMixed512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/verbenaMixed512x384.jpg") },
       ],
     },
     {
@@ -250,12 +249,12 @@ export const PLANTS = [
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Mixed", image: "flats/vincaMixed512x384.jpg" },
-        { name: "Red", image: "flats/vincaRed512x384.jpg" },
-        { name: "White", image: "flats/vincaWhite512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/vincaMixed512x384.jpg") },
+        { name: "Red", image: require("../images/flats/vincaRed512x384.jpg") },
+        { name: "White", image: require("../images/flats/vincaWhite512x384.jpg") },
         {
           name: "Lavender",
-          image: "flats/vincaLavender512x384.jpg",
+          image: require("../images/flats/vincaLavender512x384.jpg"),
         },
       ],
     },
@@ -268,14 +267,14 @@ export const PLANTS = [
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
       variety: [
-        { name: "Mixed", image: "flats/zinniaMixed512x384.jpg" },
+        { name: "Mixed", image: require("../images/flats/zinniaMixed512x384.jpg") },
       ],
     }]
   },
   {
     title: "Hanging Baskets",
     group: "hb",
-    image: "hb/petuniaPinkPurpleHB750x500.jpg",
+    image: require("../images/hb/petuniaPinkPurpleHB750x500.jpg"),
     description:
       "Our 10-inch and 12-inch flower baskets are of unbeatable quality. They regularly sell out every year. Never disappointing, these spectacular baskets keep customers coming back year after year. The wave petunias and ivy geraniums are unrivaled in their beauty and quality.",
     shortDescription:
@@ -291,19 +290,19 @@ export const PLANTS = [
       variety: [
         {
           name: "Blue purple",
-          image: "hb/comboBluePurple512x384.jpg",
+          image: require("../images/hb/comboBluePurple512x384.jpg"),
         },
         {
           name: "Pink and colors",
-          image: "hb/comboPinkComp512x384.jpg",
+          image: require("../images/hb/comboPinkComp512x384.jpg"),
         },
         {
           name: "Red and colors",
-          image: "hb/comboRedWhiteBlue512x384.jpg",
+          image: require("../images/hb/comboRedWhiteBlue512x384.jpg"),
         },
         {
           name: "Yellow and colors",
-          image: "hb/comboRedYellowBlue512x384.jpg",
+          image: require("../images/hb/comboRedYellowBlue512x384.jpg"),
         },
       ],
     },
@@ -317,7 +316,7 @@ export const PLANTS = [
       variety: [
         {
           name: "Sparkler pink",
-          image: "hb/dblRosebudSparklerHotPinkHB512x384.jpg",
+          image: require("../images/hb/dblRosebudSparklerHotPinkHB512x384.jpg"),
         },
       ],
     },
@@ -330,7 +329,7 @@ export const PLANTS = [
       variety: [
         {
           name: "Red",
-          image: "hb/dragonWingBegoniaRed512x384.jpg",
+          image: require("../images/hb/dragonWingBegoniaRed512x384.jpg"),
         },
       ],
     },
@@ -344,11 +343,11 @@ export const PLANTS = [
       variety: [
         {
           name: "Red purple",
-          image: "hb/fuschiaRedPurple512x384.jpg",
+          image: require("../images/hb/fuschiaRedPurple512x384.jpg"),
         },
         {
           name: "Red white",
-          image: "hb/fuschiaRedWhite512x384.jpg",
+          image: require("../images/hb/fuschiaRedWhite512x384.jpg"),
         },
       ],
     },
@@ -362,7 +361,7 @@ export const PLANTS = [
       variety: [
         {
           name: "Yellow peach",
-          image: "hb/illuminationBegoniaApricot512x384.jpg",
+          image: require("../images/hb/illuminationBegoniaApricot512x384.jpg"),
         },
       ],
     },
@@ -374,9 +373,9 @@ export const PLANTS = [
       group: "hb",
       description: "Lorem ipsum",
       variety: [
-        { name: "Mixed", image: "hb/impatiensMixedHB512x384.jpg" },
-        { name: "Pink", image: "hb/impatiensPinkHB512x384.jpg" },
-        { name: "Red", image: "hb/impatiensRed512x384.jpg" },
+        { name: "Mixed", image: require("../images/hb/impatiensMixedHB512x384.jpg") },
+        { name: "Pink", image: require("../images/hb/impatiensPinkHB512x384.jpg") },
+        { name: "Red", image: require("../images/hb/impatiensRed512x384.jpg") },
       ],
     },
     {
@@ -387,11 +386,11 @@ export const PLANTS = [
       group: "hb",
       description: "Lorem ipsum",
       variety: [
-        { name: "Red", image: "hb/ivyGeraniumRedHB512x384.jpg" },
-        { name: "Pink", image: "hb/ivyGeraniumPinkHB512x384.jpg" },
+        { name: "Red", image: require("../images/hb/ivyGeraniumRedHB512x384.jpg") },
+        { name: "Pink", image: require("../images/hb/ivyGeraniumPinkHB512x384.jpg") },
         {
           name: "Lavender",
-          image: "hb/ivyGeraniumLavenderHB512x384.jpg",
+          image: require("../images/hb/ivyGeraniumLavenderHB512x384.jpg"),
         },
       ],
     },
@@ -405,16 +404,16 @@ export const PLANTS = [
       variety: [
         {
           name: "Blue",
-          image: "hb/millionBellsBlueHB512x384.jpg",
+          image: require("../images/hb/millionBellsBlueHB512x384.jpg"),
         },
         {
           name: "Pink",
-          image: "hb/millionBellsPinkHB512x384.jpg",
+          image: require("../images/hb/millionBellsPinkHB512x384.jpg"),
         },
-        { name: "Red", image: "hb/millionBellsRedHB512x384.jpg" },
+        { name: "Red", image: require("../images/hb/millionBellsRedHB512x384.jpg") },
         {
           name: "Yellow",
-          image: "hb/millionBellsYellowHB512x384.jpg",
+          image: require("../images/hb/millionBellsYellowHB512x384.jpg"),
         },
       ],
     },
@@ -428,29 +427,29 @@ export const PLANTS = [
       variety: [
         {
           name: "Bordeaux",
-          image: "hb/petuniaBordeauxHB512x384.jpg",
+          image: require("../images/hb/petuniaBordeauxHB512x384.jpg"),
         },
         {
           name: "Burgundy star",
-          image: "hb/petuniaBurgundyStarHB512x384.jpg",
+          image: require("../images/hb/petuniaBurgundyStarHB512x384.jpg"),
         },
         {
           name: "Midnight blue",
-          image: "hb/petuniaMidnightBlueHB512x384.jpg",
+          image: require("../images/hb/petuniaMidnightBlueHB512x384.jpg"),
         },
-        { name: "Purple", image: "hb/petuniaPurpleHB512x384.jpg" },
+        { name: "Purple", image: require("../images/hb/petuniaPurpleHB512x384.jpg") },
         {
           name: "Sky blue",
-          image: "hb/petuniaSkyBlueHB512x384.jpg",
+          image: require("../images/hb/petuniaSkyBlueHB512x384.jpg"),
         },
-        { name: "Pink", image: "hb/petuniaPinkHB512x384.jpg" },
+        { name: "Pink", image: require("../images/hb/petuniaPinkHB512x384.jpg") },
       ],
     }]
   },
   {
     title: "Herbs and Tomatoes",
     group: "herbTomato",
-    image: "pots/basilHerb720x480.jpg",
+    image: require("../images/pots/basilHerb720x480.jpg"),
     description:
       "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious homegrown tomatoes, we offer several reliable varieties in 4-inch pots.",
     shortDescription:
@@ -464,7 +463,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "The crown jewel of any home garden",
       variety: [
-        { name: "Tomato", image: "pots/betterBoy512x384.jpg" },
+        { name: "Tomato", image: require("../images/pots/betterBoy512x384.jpg") },
       ],
     },
     {
@@ -475,7 +474,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "The crown jewel of any home garden",
       variety: [
-        { name: "Tomato", image: "pots/cherry512x384.jpg" },
+        { name: "Tomato", image: require("../images/pots/cherry512x384.jpg") },
       ],
     },
     {
@@ -486,7 +485,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "The crown jewel of any home garden",
       variety: [
-        { name: "Tomato", image: "pots/earlyGirl512x384.jpg" },
+        { name: "Tomato", image: require("../images/pots/earlyGirl512x384.jpg") },
       ],
     },
     {
@@ -497,7 +496,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "The crown jewel of any home garden",
       variety: [
-        { name: "Tomato", image: "pots/grape512x384.jpg" },
+        { name: "Tomato", image: require("../images/pots/grape512x384.jpg") },
       ],
     },
     {
@@ -507,7 +506,7 @@ export const PLANTS = [
       sun: "full sun",
       group: "herbTomato",
       description: "The crown jewel of any home garden",
-      variety: [{ name: "Tomato", image: "pots/roma512x384.jpg" }],
+      variety: [{ name: "Tomato", image: require("../images/pots/roma512x384.jpg") }],
     },
     {
       id: 29,
@@ -517,7 +516,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "The crown jewel of any home garden",
       variety: [
-        { name: "Tomato", image: "pots/superSteak512x384.jpg" },
+        { name: "Tomato", image: require("../images/pots/superSteak512x384.jpg") },
       ],
     },
     {
@@ -528,7 +527,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "One gallon patio pot",
       variety: [
-        { name: "Tomato", image: "pots/tomatoGallon512x384.jpg" },
+        { name: "Tomato", image: require("../images/pots/tomatoGallon512x384.jpg") },
       ],
     },
     {
@@ -538,7 +537,7 @@ export const PLANTS = [
       sun: "full sun",
       group: "herbTomato",
       description: "Fresh herbs grown in your own garden is heaven on earth",
-      variety: [{ name: "Herb", image: "pots/basil512x384.jpg" }],
+      variety: [{ name: "Herb", image: require("../images/pots/basil512x384.jpg") }],
     },
     {
       id: 32,
@@ -547,7 +546,7 @@ export const PLANTS = [
       sun: "full sun",
       group: "herbTomato",
       description: "Fresh herbs grown in your own garden is heaven on earth",
-      variety: [{ name: "Herb", image: "pots/chives512x384.jpg" }],
+      variety: [{ name: "Herb", image: require("../images/pots/chives512x384.jpg") }],
     },
     {
       id: 33,
@@ -557,7 +556,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "Fresh herbs grown in your own garden is heaven on earth",
       variety: [
-        { name: "Herb", image: "pots/cilantro512x384.jpg" },
+        { name: "Herb", image: require("../images/pots/cilantro512x384.jpg") },
       ],
     },
     {
@@ -568,7 +567,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "Fresh herbs grown in your own garden is heaven on earth",
       variety: [
-        { name: "Herb", image: "pots/oregano512x384.jpg" },
+        { name: "Herb", image: require("../images/pots/oregano512x384.jpg") },
       ],
     },
     {
@@ -579,7 +578,7 @@ export const PLANTS = [
       group: "herbTomato",
       description: "Fresh herbs grown in your own garden is heaven on earth",
       variety: [
-        { name: "Herb", image: "pots/parsley512x384.jpg" },
+        { name: "Herb", image: require("../images/pots/parsley512x384.jpg") },
       ],
     },
     {
@@ -590,14 +589,14 @@ export const PLANTS = [
       group: "herbTomato",
       description: "Fresh herbs grown in your own garden is heaven on earth",
       variety: [
-        { name: "Herb", image: "pots/rosemary512x384.jpg" },
+        { name: "Herb", image: require("../images/pots/rosemary512x384.jpg") },
       ],
     }]
   },
   {
     title: "Potted Plants",
     group: "pot",
-    image: "pots/margueriteDaisy512x384.jpg",
+    image: require("../images/pots/margueriteDaisy512x384.jpg"),
     description:
       "Annuals available in 4-inch, 4.5-inch, 6-inch, 12-inch and gallon sized pots. Our selection includes zonal Geraniums, Marguerite Daisy, Purple Annual Fountain Grass and popular accent plants. The patio pots are beautiful, easy and ready to go.",
     shortDescription:
@@ -613,7 +612,7 @@ export const PLANTS = [
       variety: [
         {
           name: "Yellow",
-          image: "pots/margueriteDaisy512x384.jpg",
+          image: require("../images/pots/margueriteDaisy512x384.jpg"),
         },
       ],
     },
@@ -625,16 +624,16 @@ export const PLANTS = [
       group: "pot",
       description: "red, white, pink, salmon, violet/fuschia",
       variety: [
-        { name: "Red", image: "hb/ivyGeraniumRedHB512x384.jpg" },
-        { name: "White", image: "pots/geraniumWhite512x384.jpg" },
-        { name: "Pink", image: "pots/geraniumPink512x384.jpg" },
+        { name: "Red", image: require("../images/hb/ivyGeraniumRedHB512x384.jpg") },
+        { name: "White", image: require("../images/pots/geraniumWhite512x384.jpg") },
+        { name: "Pink", image: require("../images/pots/geraniumPink512x384.jpg") },
         {
           name: "Salmon",
-          image: "hb/ivyGeraniumSalmonHB512x384.jpg",
+          image: require("../images/hb/ivyGeraniumSalmonHB512x384.jpg"),
         },
         {
           name: "Violet/fuschia",
-          image: "pots/geraniumVioletFuschia512x384.jpg",
+          image: require("../images/pots/geraniumVioletFuschia512x384.jpg"),
         },
       ],
     },
@@ -649,7 +648,7 @@ export const PLANTS = [
       variety: [
         {
           name: "Purple",
-          image: "pots/fountainGrassPurple512x384.jpg",
+          image: require("../images/pots/fountainGrassPurple512x384.jpg"),
         },
       ],
     },
@@ -663,13 +662,13 @@ export const PLANTS = [
       variety: [
         {
           name: "Salmon",
-          image: "pots/patioPotSalmon512x384.jpg",
+          image: require("../images/pots/patioPotSalmon512x384.jpg"),
         },
-        { name: "Pink", image: "pots/patioPotPink512x384.jpg" },
-        { name: "Red", image: "pots/patioPotRed512x384.jpg" },
+        { name: "Pink", image: require("../images/pots/patioPotPink512x384.jpg") },
+        { name: "Red", image: require("../images/pots/patioPotRed512x384.jpg") },
         {
           name: "Violet",
-          image: "pots/patioPotViolet512x384.jpg",
+          image: require("../images/pots/patioPotViolet512x384.jpg"),
         },
       ],
     },
@@ -681,8 +680,8 @@ export const PLANTS = [
       group: "pot",
       description: "Foilage plants to add interest to your garden",
       variety: [
-        { name: "Blackie", image: "pots/potatoVine512x384.jpg" },
-        { name: "Lime", image: "pots/potatoVineLime512x384.jpg" },
+        { name: "Blackie", image: require("../images/pots/potatoVine512x384.jpg") },
+        { name: "Lime", image: require("../images/pots/potatoVineLime512x384.jpg") },
       ],
     },
     {
@@ -695,7 +694,7 @@ export const PLANTS = [
       variety: [
         {
           name: "Accent plant",
-          image: "pots/vincaVine512x384.jpg",
+          image: require("../images/pots/vincaVine512x384.jpg"),
         },
       ],
     },
@@ -707,7 +706,7 @@ export const PLANTS = [
       group: "pot",
       description: "Foilage plants to accent your flowering plants",
       variety: [
-        { name: "Accent plant", image: "pots/spikes512x384.jpg" },
+        { name: "Accent plant", image: require("../images/pots/spikes512x384.jpg") },
       ],
     }],
   },

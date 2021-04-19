@@ -45,13 +45,14 @@ const styles = StyleSheet.create({
 		borderBottomWidth: StyleSheet.hairlineWidth,
     },
     sectionTitle: {
-        display: "flex",
+        // display: "flex",
+        flex: 1,
         marginTop: 12,
         marginBottom: 6,
         fontSize: 24,
         fontWeight: '600',
         color: 'black',
-        justifyContent: "center",
+        textAlign: 'center',
     },
     sectionTitleGreen: {
         fontSize: 24,
@@ -59,12 +60,13 @@ const styles = StyleSheet.create({
         color: 'green',
     },
     sectionDescription: {
-        display: "flex",
+        // display: "flex",
+        flex: 1,
         margin: 6,
         fontSize: 14,
         fontWeight: '400',
         color: 'black',
-        justifyContent: 'center',
+        textAlign: 'center',
     },
     sectionDescriptionBold: {
         marginTop: 8,
@@ -73,8 +75,9 @@ const styles = StyleSheet.create({
         color: 'black',
     },
     sectionImage: {
-        width: '100%',
+        // width: '100%',
         height: 250,
+        width: '100%',
         resizeMode: 'cover',
     },
     headerContainer: {

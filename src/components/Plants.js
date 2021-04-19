@@ -42,7 +42,7 @@ const renderSectionHeader = ({section}) => {
 }
 
 const renderPlant = ({item, index}) => {
-    const plantImage=require('../images/' + item.variety[0].image);
+    // const plantImage=require('../images/' + item.variety[0].image);
     let varietiesString;
     if (item.variety.length > 1) {
         varietiesString = item.variety.length + " varieties";
@@ -59,7 +59,7 @@ const renderPlant = ({item, index}) => {
         <View key={index} style={styles.sectionContainer}>
             <Image
                 style={styles.sectionImage}
-                source={plantImage}
+                source={item.variety[0].image}
             />
             <Text style={styles.sectionDescription}>{item.sun}</Text>
             <Text style={styles.sectionTitle}>{item.name}</Text>
@@ -67,6 +67,17 @@ const renderPlant = ({item, index}) => {
             <Text style={styles.sectionDescription}>{priceString}</Text>
             <Text style={styles.sectionDescription}>{containerString}</Text>
         </View>
+    );
+}
+
+const DynamicImage = (props) => {
+    return (
+        // <View style={styles.sectionContainer}>
+            <Image
+                style={styles.sectionImage}
+                source={props.image}
+            />
+        // </View>
     );
 }
 
