@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     sectionContainer: {
+        display: "flex",
         marginTop: 32,
         paddingHorizontal: 24,
 		borderBottomColor: 'rgb(176, 196, 222)',
@@ -79,6 +80,7 @@ const styles = StyleSheet.create({
         height: 250,
         width: '100%',
         resizeMode: 'cover',
+        borderRadius: 5,
     },
     headerContainer: {
         paddingHorizontal: 24,
@@ -96,17 +98,58 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 250,
         resizeMode: 'cover',
+        borderRadius: 5,
     },
     footerImage: {
         width: 75,
         height: 75,
         resizeMode: 'cover',
+        borderRadius: 5,
     },
     footerContainer: {
         marginTop: 32,
         paddingHorizontal: 24,
         marginBottom: 40,
     },
+    detailContainer: {
+        display: "flex",
+        marginTop: 32,
+        paddingHorizontal: 24,
+		borderBottomColor: 'rgb(176, 196, 222)',
+		borderBottomWidth: StyleSheet.hairlineWidth,
+    },
+    detailTitle: {
+        // display: "flex",
+        // flex: 1,
+        marginTop: 12,
+        marginBottom: 6,
+        fontSize: 24,
+        fontWeight: '600',
+        color: 'black',
+        textAlign: 'center',
+    },
+    detailDescription: {
+        // display: "flex",
+        // flex: 1,
+        margin: 6,
+        fontSize: 14,
+        fontWeight: '400',
+        color: 'black',
+        textAlign: 'center',
+    },
+    thumbnailContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+    },
+    thumbnail: {
+        width: 70,
+        height: 70,
+        resizeMode: 'cover',
+        margin: 8,
+        borderRadius: 5,
+        borderColor: 'lightsalmon',
+    }
 
 });
 

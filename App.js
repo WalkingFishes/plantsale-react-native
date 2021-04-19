@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/components/Home';
 import Order from './src/components/Order';
 import Plants from './src/components/Plants';
+import PlantDetail from './src/components/PlantDetail';
 
 const Stack = createStackNavigator();
 
@@ -14,8 +15,8 @@ export default function App() {
 
         <NavigationContainer>
             <Stack.Navigator
-                // initialRouteName="App_to_Home"
-                initialRouteName="Home_to_Plants"
+                initialRouteName="App_to_Home"
+                // initialRouteName="Home_to_Plants"
                 screenOptions={{
                     headerTintColor: 'white',
                     headerStyle: {backgroundColor: 'green'},
@@ -50,6 +51,11 @@ export default function App() {
                     name="Home_to_Order"
                     component={Order}
                     options={ ( {route} ) => ({title: route.params.title})}
+                />
+                <Stack.Screen
+                    name="PlantDetail"
+                    component={PlantDetail}
+                    options={ ( {route} ) => ({title: 'Plant Detail'})}
                 />
             </Stack.Navigator>
         </NavigationContainer>

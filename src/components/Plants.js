@@ -1,29 +1,31 @@
 import React from 'react';
-import { Button, View, Text, StyleSheet, SectionList, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Button, View, Text, StyleSheet, SectionList, Image, Pressable, Alert } from 'react-native';
 import styles from '../shared/sharedStyles';
 import { PLANTS } from '../shared/plants';
 import { PRICING } from '../shared/pricing';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import PlantDetail from './PlantDetail';
 
 const Plants = ( {navigation, route} ) => {
     // const title = route.params.title;
     // console.log(route);
+    // console.log(props);
     return (
         <View>
-            {/* style={styles.mainView}> */}
-            {/* <Text>{title}</Text> */}
-            {/* <TouchableOpacity
-                style={styles.touchableView}
-                onPress={()=> { navigation.navigate("App_to_Home") }} >
-                <View>
-                    <Text style={styles.touchableText}>Home</Text>
-                </View>
-            </TouchableOpacity> */}
             <SectionList
                 sections={PLANTS}
-                renderItem={renderPlant}
+                // renderItem={({item}) =>
+                //     <Pressable onPress={() => navigation.navigate('PlantDetail', {name: 'PlantDetail'})}>
+                //         {renderPlant(item)}
+                //     </Pressable>
+                // }
+
+                renderItem={({item, index}) => 
+                <Pressable onPress={() => navigation.navigate('PlantDetail', {plant: item})}> 
+                    <PlantCard item={item} index={index}/> 
+                </Pressable>}
+
                 renderSectionHeader={renderSectionHeader}
                 keyExtractor={(item, index) => index}
                 // ListHeaderComponent={HeaderComponent}
@@ -40,9 +42,23 @@ const renderSectionHeader = ({section}) => {
         </View>
     );
 }
+const onPressFunction = (plant) => {
+    Alert.alert(
+        "Plant Card Pressed",
+        plant.name,
+        [
+            {
+                text: "Cancel",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel"
+            },
+            { text: "OK", onPress: () => console.log("OK Pressed") }
+        ]
+    );
+}
 
-const renderPlant = ({item, index}) => {
-    // const plantImage=require('../images/' + item.variety[0].image);
+
+const PlantCard = ({item, index}) => {
     let varietiesString;
     if (item.variety.length > 1) {
         varietiesString = item.variety.length + " varieties";
@@ -56,17 +72,17 @@ const renderPlant = ({item, index}) => {
     const containerString = pricingGroup.container.description;
         // item.variety.length + " varieties";
     return (
-        <View key={index} style={styles.sectionContainer}>
-            <Image
-                style={styles.sectionImage}
-                source={item.variety[0].image}
-            />
-            <Text style={styles.sectionDescription}>{item.sun}</Text>
-            <Text style={styles.sectionTitle}>{item.name}</Text>
-            <Text style={styles.sectionDescription}>{varietiesString}</Text>
-            <Text style={styles.sectionDescription}>{priceString}</Text>
-            <Text style={styles.sectionDescription}>{containerString}</Text>
-        </View>
+            <View key={index} style={styles.sectionContainer}>
+                <Image
+                    style={styles.sectionImage}
+                    source={item.variety[0].image}
+                />
+                <Text style={styles.sectionDescription}>{item.sun}</Text>
+                <Text style={styles.sectionTitle}>{item.name}</Text>
+                <Text style={styles.sectionDescription}>{varietiesString}</Text>
+                <Text style={styles.sectionDescription}>{priceString}</Text>
+                <Text style={styles.sectionDescription}>{containerString}</Text>
+            </View>
     );
 }
 
