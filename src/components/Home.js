@@ -1,29 +1,36 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import { SafeAreaView, View, Text, Image, ImageBackground, Pressable } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import styles from '../shared/sharedStyles';
 import { PLANTS } from '../shared/plants';
 import { Footer } from '../components/Footer';
+import AppStatusBar from '../components/AppStatusBar';
 
 const Home = ( {navigation} ) => {
     const plantGroups = PLANTS.map((group) => {
         const groupTitle = group.title + " (" + group.data.length + ")";
         return (
-            <TouchableOpacity
+            <Pressable
                 key={group.group}
-                style={styles.touchableView}
+                style={styles.groupContainer}
                 onPress={()=> { navigation.navigate( "Plants", { title: groupTitle, plantGroup: group.group, }) }} >
                 <View>
-                    <Text style={styles.touchableText}>{group.title}</Text>
+                    <View style={styles.groupImageContainer}>
+                        <Image
+                            style={styles.itemImage}
+                            source={group.image}
+                        />
+                    </View>
+                    <Text style={styles.groupTitle}>{group.title}</Text>
+                    <Text style={styles.groupDescription}>{group.shortDescription}</Text>
                 </View>
-            </TouchableOpacity>
+            </Pressable>
         );
     });
     return (
         <SafeAreaView>
-            <ScrollView contentContainerStyle={styles.mainScrollView}
-            // style={styles.mainView}
-            >
+            <AppStatusBar backgroundColor="green" barStyle="light-content" /> 
+            <ScrollView contentContainerStyle={styles.mainScrollView}>
                 <ImageBackground
                     style={styles.headerImage}
                     source={require("../images/purple-fountain-grass-blurred.jpg")}>
@@ -32,15 +39,14 @@ const Home = ( {navigation} ) => {
                         <Text style={styles.headerTitle}>Plant Sale</Text>
                     </View>
                 </ImageBackground>
-                {/* <ImageBackground source={require('background image path')} style={{width: '100%', height: '100%'}}> </ImageBackground> */}
                 {plantGroups}
-                <TouchableOpacity
+                {/* <TouchableOpacity
                     style={styles.touchableView}
                     onPress={()=> { navigation.navigate("ViewOrder", {title: "My Order"}) }} >
                     <View>
                         <Text style={styles.touchableText}>View Order</Text>
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <Footer />
             </ScrollView>
         </SafeAreaView>
