@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import styles from '../shared/sharedStyles';
 import { PLANTS } from '../shared/plants';
@@ -20,10 +20,19 @@ const Home = ( {navigation} ) => {
         );
     });
     return (
-        <SafeAreaView style={styles.mainView}>
-                <Image style={styles.headerImage}
-                    source={require("../images/purple-fountain-grass1024x512.jpg")}/>
-            <ScrollView contentContainerStyle={styles.mainScrollView} style={styles.mainView}>
+        <SafeAreaView>
+            <ScrollView contentContainerStyle={styles.mainScrollView}
+            // style={styles.mainView}
+            >
+                <ImageBackground
+                    style={styles.headerImage}
+                    source={require("../images/purple-fountain-grass-blurred.jpg")}>
+                    <View style={styles.headerContainer}>
+                        <Text style={styles.headerTitle}>Scout Troop 34</Text>
+                        <Text style={styles.headerTitle}>Plant Sale</Text>
+                    </View>
+                </ImageBackground>
+                {/* <ImageBackground source={require('background image path')} style={{width: '100%', height: '100%'}}> </ImageBackground> */}
                 {plantGroups}
                 <TouchableOpacity
                     style={styles.touchableView}

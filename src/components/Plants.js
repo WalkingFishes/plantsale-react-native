@@ -3,7 +3,6 @@ import { View, Text, Image, Pressable, FlatList } from 'react-native';
 import styles from '../shared/sharedStyles';
 import { PLANTS } from '../shared/plants';
 import { PRICING } from '../shared/pricing';
-import { Header } from './Header';
 import { Footer } from './Footer';
 // import PlantDetail from './PlantDetail';
 
@@ -19,7 +18,6 @@ const Plants = ( {navigation, route} ) => {
                     <PlantCard item={item} index={index}/> 
                 </Pressable>}
                 keyExtractor={(item, index) => index.toString()}
-                // ListHeaderComponent={HeaderComponent}
                 ListFooterComponent={FooterComponent}
             />
         </View>
@@ -53,16 +51,6 @@ const PlantCard = ({item, index}) => {
                 <Text style={styles.itemDescription}>{priceString}</Text>
                 <Text style={styles.itemDescription}>{containerString}</Text>
             </View>
-    );
-}
-
-const HeaderComponent = () => {
-    return (
-        <Header
-            image={require('../images/purple-fountain-grass1024x512.jpg')}
-            heading={'Plants List'}
-            style={styles.itemTitle}
-        />
     );
 }
 

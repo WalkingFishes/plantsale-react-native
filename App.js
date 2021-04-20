@@ -27,7 +27,7 @@ export default function App() {
                 <Stack.Screen
                     name="App_to_Home"
                     options={{
-                        title: 'Plant Sale',
+                        title: 'Home',
                         headerTitleStyle: {
                             fontWeight: 'bold',
                             fontSize: 30

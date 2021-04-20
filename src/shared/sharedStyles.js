@@ -2,13 +2,39 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     mainView: {
-        flex: 1,
+        // flex: 1,
         // alignItems: 'center',
     },
     mainScrollView: {
         // flexGrow: 1,
         // justifyContent: 'center',
         alignItems: 'center',
+    },
+    headerImage: {
+        width: '100%',
+        height: 180,
+        resizeMode: 'contain',
+        marginTop: 0,
+        // opacity: 0.6,
+        marginBottom: 20,
+        // borderRadius: 5,
+    },
+    headerContainer: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    headerTitle: {
+        fontSize: 40,
+        fontWeight: 'bold',
+        color: 'white',
+        textShadowColor: 'black',
+        textShadowOffset: {width: 2, height: 2},
+        textShadowRadius: 30,
     },
     touchableView: {
         marginBottom: 30,
@@ -83,26 +109,6 @@ const styles = StyleSheet.create({
         width: 260,
         resizeMode: 'cover',
         borderRadius: 5,
-    },
-    headerContainer: {
-        paddingHorizontal: 24,
-        marginBottom: 10,
-        backgroundColor: 'lightsalmon',
-        borderRadius: 6,
-    },
-    headerTitle: {
-        fontSize: 24,
-        fontWeight: '600',
-        color: 'black',
-        textAlign: 'center',
-    },
-    headerImage: {
-        width: '100%',
-        height: 150,
-        resizeMode: 'contain',
-        opacity: 0.6,
-        marginBottom: 20,
-        // borderRadius: 5,
     },
     footerImage: {
         width: 75,
