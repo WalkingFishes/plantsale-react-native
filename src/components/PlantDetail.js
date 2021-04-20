@@ -3,6 +3,7 @@ import { ScrollView, View, Text, Image, Pressable, TouchableOpacity, Alert } fro
 import InputSpinner from 'react-native-input-spinner';
 import styles from '../shared/sharedStyles';
 import { PRICING } from '../shared/pricing';
+import { Footer } from '../components/Footer';
 
 function PlantDetail ( {navigation, route} ) {
 
@@ -43,36 +44,39 @@ function PlantDetail ( {navigation, route} ) {
     }
 
     return (
-            <ScrollView style={styles.detailContainer}>
-                <Text style={styles.detailTitle}>{item.name}</Text>
-                <View style={{display: "flex", flexDirection: "row"}}>
-                    <Text style={styles.detailDescriptionLeft}>{containerString}</Text>
-                    <Text style={styles.detailDescriptionRight}>{priceString}</Text>
+            <ScrollView style={styles.detailPage}>
+                <View style={styles.detailContainer}>
+                    <Text style={styles.detailTitle}>{item.name}</Text>
+                    <View style={{display: "flex", flexDirection: "row"}}>
+                        <Text style={styles.detailDescriptionLeft}>{containerString}</Text>
+                        <Text style={styles.detailDescriptionRight}>{priceString}</Text>
+                    </View>
+                    <View style={styles.imageContainer}>
+                        <Image
+                            style={styles.detailImage}
+                            source={item.variety[varietyIndex].image}
+                        />
+                    </View>
+                    <Text style={styles.detailDescription}>{item.variety[varietyIndex].name}</Text>
+                    <View style={styles.thumbnailContainer}>
+                        {thumbnails}
+                    </View>
+                    <View style={{flexDirection: "row"}}>
+                        <InputSpinner
+                            value={quantity}
+                            style={styles.spinner}
+                            onChange={(qty) => { setQuantity(qty)}}
+                        />
+                        <TouchableOpacity
+                            style={styles.cartButton}
+                            onPress={()=> { addToCart(item) }} >
+                            <View>
+                                <Text style={styles.touchableText}>Add to Cart</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-                <View style={styles.imageContainer}>
-                    <Image
-                        style={styles.detailImage}
-                        source={item.variety[varietyIndex].image}
-                    />
-                </View>
-                <Text style={styles.detailDescription}>{item.variety[varietyIndex].name}</Text>
-                <View style={styles.thumbnailContainer}>
-                    {thumbnails}
-                </View>
-                <View style={{flexDirection: "row"}}>
-                    <InputSpinner
-                        value={quantity}
-                        style={styles.spinner}
-                        onChange={(qty) => { setQuantity(qty)}}
-                    />
-                    <TouchableOpacity
-                        style={styles.cartButton}
-                        onPress={()=> { addToCart(item) }} >
-                        <View>
-                            <Text style={styles.touchableText}>Add to Cart</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
+                <Footer />
             </ScrollView>
     );
 }

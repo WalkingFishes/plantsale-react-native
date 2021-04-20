@@ -3,6 +3,7 @@ import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Image } from 'r
 import { ScrollView } from 'react-native-gesture-handler';
 import styles from '../shared/sharedStyles';
 import { PLANTS } from '../shared/plants';
+import { Footer } from '../components/Footer';
 
 const Home = ( {navigation} ) => {
     const plantGroups = PLANTS.map((group) => {
@@ -30,6 +31,7 @@ const Home = ( {navigation} ) => {
                         <Text style={styles.touchableText}>View Order</Text>
                     </View>
                 </TouchableOpacity>
+                <Footer />
             </ScrollView>
         </SafeAreaView>
     );

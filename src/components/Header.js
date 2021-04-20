@@ -4,7 +4,7 @@ import styles from '../shared/sharedStyles';
 
 export const Header = (props) => {
     return (
-        <View style={styles.sectionContainer}>
+        <View style={styles.itemContainer}>
             <Image
                 style={styles.headerImage}
                 source={props.image}

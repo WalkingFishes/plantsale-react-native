@@ -40,18 +40,18 @@ const PlantCard = ({item, index}) => {
     const containerString = pricingGroup.container.description;
         // item.variety.length + " varieties";
     return (
-            <View key={index} style={styles.sectionContainer}>
+            <View key={index} style={styles.itemContainer}>
                 <View style={styles.imageContainer}>
                     <Image
-                        style={styles.sectionImage}
+                        style={styles.itemImage}
                         source={item.variety[0].image}
                     />
                 </View>
-                <Text style={styles.sectionDescription}>{item.sun}</Text>
-                <Text style={styles.sectionTitle}>{item.name}</Text>
-                <Text style={styles.sectionDescription}>{varietiesString}</Text>
-                <Text style={styles.sectionDescription}>{priceString}</Text>
-                <Text style={styles.sectionDescription}>{containerString}</Text>
+                <Text style={styles.itemDescription}>{item.sun}</Text>
+                <Text style={styles.itemTitle}>{item.name}</Text>
+                <Text style={styles.itemDescription}>{varietiesString}</Text>
+                <Text style={styles.itemDescription}>{priceString}</Text>
+                <Text style={styles.itemDescription}>{containerString}</Text>
             </View>
     );
 }
@@ -61,7 +61,7 @@ const HeaderComponent = () => {
         <Header
             image={require('../images/purple-fountain-grass1024x512.jpg')}
             heading={'Plants List'}
-            style={styles.sectionTitle}
+            style={styles.itemTitle}
         />
     );
 }
@@ -69,6 +69,5 @@ const HeaderComponent = () => {
 const FooterComponent = () => {
     return <Footer />;
 }
-
 
 export default Plants;

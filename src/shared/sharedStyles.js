@@ -36,14 +36,18 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "#fff",
     },
-    sectionContainer: {
+    itemContainer: {
         display: "flex",
-        marginTop: 32,
-        paddingHorizontal: 24,
-		borderBottomColor: 'rgb(176, 196, 222)',
-		borderBottomWidth: StyleSheet.hairlineWidth,
+        marginVertical: 16,
+        paddingTop: 20,
+        paddingBottom: 10,
+        // paddingHorizontal: 24,
+        marginHorizontal: 24,
+		// borderBottomColor: 'rgb(176, 196, 222)',
+		// borderBottomWidth: StyleSheet.hairlineWidth,
+        borderWidth: 5,
     },
-    sectionTitle: {
+    itemTitle: {
         // display: "flex",
         flex: 1,
         marginTop: 12,
@@ -53,12 +57,12 @@ const styles = StyleSheet.create({
         color: 'black',
         textAlign: 'center',
     },
-    sectionTitleGreen: {
+    itemTitleGreen: {
         fontSize: 24,
         fontWeight: '600',
         color: 'green',
     },
-    sectionDescription: {
+    itemDescription: {
         // display: "flex",
         flex: 1,
         margin: 6,
@@ -67,13 +71,13 @@ const styles = StyleSheet.create({
         color: 'black',
         textAlign: 'center',
     },
-    sectionDescriptionBold: {
+    itemDescriptionBold: {
         marginTop: 8,
         fontSize: 18,
         fontWeight: 'bold',
         color: 'black',
     },
-    sectionImage: {
+    itemImage: {
         // width: '100%',
         height: 220,
         width: 260,
@@ -107,21 +111,21 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     footerContainer: {
-        marginTop: 32,
+        paddingVertical: 24,
         paddingHorizontal: 24,
-        marginBottom: 40,
+    },
+    detailPage: {
+        display: "flex",
+        paddingHorizontal: 24,
     },
     detailContainer: {
-        display: "flex",
-        // marginTop: 32,
-        paddingHorizontal: 24,
-		borderBottomColor: 'rgb(176, 196, 222)',
-		borderBottomWidth: StyleSheet.hairlineWidth,
+        marginVertical: 20,
+        paddingVertical: 20,
+        borderWidth: 5,
     },
     detailTitle: {
         // display: "flex",
         // flex: 1,
-        marginTop: 18,
         marginBottom: 6,
         fontSize: 24,
         fontWeight: '600',
@@ -187,7 +191,7 @@ const styles = StyleSheet.create({
 	spinner: {
 		flex: 3,
         marginTop: 20,
-		marginRight: 10,
+		marginHorizontal: 10,
 		minWidth: 60,
 	},
     cartButton: {
