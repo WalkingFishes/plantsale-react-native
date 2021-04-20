@@ -447,7 +447,7 @@ export const PLANTS = [
     }]
   },
   {
-    title: "Herbs and Tomatoes",
+    title: "Herbs & Tomatoes",
     group: "herbTomato",
     image: require("../images/pots/basilHerb720x480.jpg"),
     description:

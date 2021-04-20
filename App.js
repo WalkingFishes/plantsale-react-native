@@ -55,7 +55,7 @@ export default function App() {
                 <Stack.Screen
                     name="PlantDetail"
                     component={PlantDetail}
-                    options={ ( {route} ) => ({title: 'Plant Detail'})}
+                    options={ ( {route} ) => ({title: route.params.title})}
                 />
             </Stack.Navigator>
         </NavigationContainer>

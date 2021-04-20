@@ -15,7 +15,7 @@ const Plants = ( {navigation, route} ) => {
             <FlatList
                 data={plants[0].data}
                 renderItem={({item, index}) => 
-                <Pressable onPress={() => navigation.navigate('PlantDetail', {plant: item})}> 
+                <Pressable onPress={() => navigation.navigate('PlantDetail', {title: item.name, plant: item})}> 
                     <PlantCard item={item} index={index}/> 
                 </Pressable>}
                 keyExtractor={(item, index) => index.toString()}

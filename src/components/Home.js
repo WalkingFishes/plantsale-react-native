@@ -7,11 +7,12 @@ import { Footer } from '../components/Footer';
 
 const Home = ( {navigation} ) => {
     const plantGroups = PLANTS.map((group) => {
+        const groupTitle = group.title + " (" + group.data.length + ")";
         return (
             <TouchableOpacity
                 key={group.group}
                 style={styles.touchableView}
-                onPress={()=> { navigation.navigate("Plants", {title: group.title, plantGroup: group.group}) }} >
+                onPress={()=> { navigation.navigate( "Plants", { title: groupTitle, plantGroup: group.group, }) }} >
                 <View>
                     <Text style={styles.touchableText}>{group.title}</Text>
                 </View>
