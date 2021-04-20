@@ -1,62 +1,30 @@
 import React from 'react';
-import { Button, View, Text, StyleSheet, SectionList, Image, Pressable, Alert } from 'react-native';
+import { View, Text, Image, Pressable, FlatList } from 'react-native';
 import styles from '../shared/sharedStyles';
 import { PLANTS } from '../shared/plants';
 import { PRICING } from '../shared/pricing';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import PlantDetail from './PlantDetail';
+// import PlantDetail from './PlantDetail';
 
 const Plants = ( {navigation, route} ) => {
-    // const title = route.params.title;
-    // console.log(route);
-    // console.log(props);
+    const type = route.params.plantGroup;
+    const plants=PLANTS.filter((group) => group.group === type);
     return (
         <View>
-            <SectionList
-                sections={PLANTS}
-                // renderItem={({item}) =>
-                //     <Pressable onPress={() => navigation.navigate('PlantDetail', {name: 'PlantDetail'})}>
-                //         {renderPlant(item)}
-                //     </Pressable>
-                // }
-
+            <FlatList
+                data={plants[0].data}
                 renderItem={({item, index}) => 
                 <Pressable onPress={() => navigation.navigate('PlantDetail', {plant: item})}> 
                     <PlantCard item={item} index={index}/> 
                 </Pressable>}
-
-                renderSectionHeader={renderSectionHeader}
-                keyExtractor={(item, index) => index}
+                keyExtractor={(item, index) => index.toString()}
                 // ListHeaderComponent={HeaderComponent}
                 ListFooterComponent={FooterComponent}
             />
         </View>
     )
 };
-
-const renderSectionHeader = ({section}) => {
-    return (
-        <View style={styles.headerContainer}>
-            <Text style={styles.headerTitle}>{section.title}</Text>
-        </View>
-    );
-}
-const onPressFunction = (plant) => {
-    Alert.alert(
-        "Plant Card Pressed",
-        plant.name,
-        [
-            {
-                text: "Cancel",
-                onPress: () => console.log("Cancel Pressed"),
-                style: "cancel"
-            },
-            { text: "OK", onPress: () => console.log("OK Pressed") }
-        ]
-    );
-}
-
 
 const PlantCard = ({item, index}) => {
     let varietiesString;
@@ -73,27 +41,18 @@ const PlantCard = ({item, index}) => {
         // item.variety.length + " varieties";
     return (
             <View key={index} style={styles.sectionContainer}>
-                <Image
-                    style={styles.sectionImage}
-                    source={item.variety[0].image}
-                />
+                <View style={styles.imageContainer}>
+                    <Image
+                        style={styles.sectionImage}
+                        source={item.variety[0].image}
+                    />
+                </View>
                 <Text style={styles.sectionDescription}>{item.sun}</Text>
                 <Text style={styles.sectionTitle}>{item.name}</Text>
                 <Text style={styles.sectionDescription}>{varietiesString}</Text>
                 <Text style={styles.sectionDescription}>{priceString}</Text>
                 <Text style={styles.sectionDescription}>{containerString}</Text>
             </View>
-    );
-}
-
-const DynamicImage = (props) => {
-    return (
-        // <View style={styles.sectionContainer}>
-            <Image
-                style={styles.sectionImage}
-                source={props.image}
-            />
-        // </View>
     );
 }
 

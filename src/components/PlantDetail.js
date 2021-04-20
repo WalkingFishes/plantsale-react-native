@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { ScrollView, View, Text, Image, Pressable, TouchableOpacity, Alert } from 'react-native';
+import InputSpinner from 'react-native-input-spinner';
 import styles from '../shared/sharedStyles';
 import { PRICING } from '../shared/pricing';
 
 function PlantDetail ( {navigation, route} ) {
 
     let item = route.params.plant;
+    const [quantity, setQuantity] = useState(1);
     const [varietyIndex, changeVarietyIndex] = useState(0);
 
     let varietiesString;
@@ -21,9 +23,8 @@ function PlantDetail ( {navigation, route} ) {
     const containerString = pricingGroup.container.description;
     const thumbnails = item.variety.map((variety, index) => {
         return (
-            <Pressable onPress={() => changeVarietyIndex(index)}> 
+            <Pressable key={index} onPress={() => changeVarietyIndex(index)}> 
                 <Image
-                    key={index}
                     style={styles.thumbnail}
                     source={variety.image}
                 />
@@ -31,23 +32,48 @@ function PlantDetail ( {navigation, route} ) {
         );
     });
 
+    const addToCart = (plant) => {
+        Alert.alert(
+            "Add to Cart",
+            quantity + " " + plant.name + " " + plant.variety[varietyIndex].name + " added to cart",
+            [
+                { text: "OK", onPress: () => console.log("OK Pressed") }
+            ]
+        );
+    }
+
     return (
-            <View style={styles.detailContainer}>
+            <ScrollView style={styles.detailContainer}>
                 <Text style={styles.detailTitle}>{item.name}</Text>
                 <View style={{display: "flex", flexDirection: "row"}}>
-                    <Text style={styles.detailDescription, { flex: 1, textAlign: 'left' }}>{containerString}</Text>
-                    <Text style={styles.detailDescription, { flex: 1, textAlign: 'right'}}>{priceString}</Text>
+                    <Text style={styles.detailDescriptionLeft}>{containerString}</Text>
+                    <Text style={styles.detailDescriptionRight}>{priceString}</Text>
                 </View>
-                <Image
-                    style={styles.sectionImage}
-                    source={item.variety[varietyIndex].image}
-                />
-                {/* <Text style={styles.detailDescription}>{item.sun}</Text> */}
-                <Text style={styles.detailDescription, {padding: 10, textAlign: 'center'}}>{item.variety[varietyIndex].name}</Text>
+                <View style={styles.imageContainer}>
+                    <Image
+                        style={styles.detailImage}
+                        source={item.variety[varietyIndex].image}
+                    />
+                </View>
+                <Text style={styles.detailDescription}>{item.variety[varietyIndex].name}</Text>
                 <View style={styles.thumbnailContainer}>
                     {thumbnails}
                 </View>
-            </View>
+                <View style={{flexDirection: "row"}}>
+                    <InputSpinner
+                        value={quantity}
+                        style={styles.spinner}
+                        onChange={(qty) => { setQuantity(qty)}}
+                    />
+                    <TouchableOpacity
+                        style={styles.cartButton}
+                        onPress={()=> { addToCart(item) }} >
+                        <View>
+                            <Text style={styles.touchableText}>Add to Cart</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+            </ScrollView>
     );
 }
 

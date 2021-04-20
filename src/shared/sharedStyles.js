@@ -3,12 +3,16 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     mainView: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
+        // alignItems: 'center',
+    },
+    mainScrollView: {
+        // flexGrow: 1,
+        // justifyContent: 'center',
+        alignItems: 'center',
     },
     touchableView: {
         marginBottom: 30,
-        width: 150,
+        width: 300,
         height: 50,
         alignItems: "center",
         backgroundColor: "green",
@@ -31,12 +35,6 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 20,
         color: "#fff",
-    },
-    logo: {
-        width: "100%",
-        height: 250,
-        opacity: 0.6,
-        resizeMode: 'contain',
     },
     sectionContainer: {
         display: "flex",
@@ -77,8 +75,8 @@ const styles = StyleSheet.create({
     },
     sectionImage: {
         // width: '100%',
-        height: 250,
-        width: '100%',
+        height: 220,
+        width: 260,
         resizeMode: 'cover',
         borderRadius: 5,
     },
@@ -96,9 +94,11 @@ const styles = StyleSheet.create({
     },
     headerImage: {
         width: '100%',
-        height: 250,
-        resizeMode: 'cover',
-        borderRadius: 5,
+        height: 150,
+        resizeMode: 'contain',
+        opacity: 0.6,
+        marginBottom: 20,
+        // borderRadius: 5,
     },
     footerImage: {
         width: 75,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     },
     detailContainer: {
         display: "flex",
-        marginTop: 32,
+        // marginTop: 32,
         paddingHorizontal: 24,
 		borderBottomColor: 'rgb(176, 196, 222)',
 		borderBottomWidth: StyleSheet.hairlineWidth,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     detailTitle: {
         // display: "flex",
         // flex: 1,
-        marginTop: 12,
+        marginTop: 18,
         marginBottom: 6,
         fontSize: 24,
         fontWeight: '600',
@@ -130,27 +130,77 @@ const styles = StyleSheet.create({
     },
     detailDescription: {
         // display: "flex",
-        // flex: 1,
-        margin: 6,
-        fontSize: 14,
+        flex: 1,
+        // margin: 8,
+        fontSize: 16,
         fontWeight: '400',
         color: 'black',
+        paddingHorizontal: 16,
+        paddingVertical: 10,
         textAlign: 'center',
+    },
+    detailDescriptionLeft: {
+        flex: 1,
+        fontSize: 16,
+        fontWeight: '400',
+        color: 'black',
+        paddingHorizontal: 16,
+        paddingVertical: 10,
+        textAlign: 'left',
+    },
+    detailDescriptionRight: {
+        flex: 1,
+        fontSize: 16,
+        fontWeight: '400',
+        color: 'black',
+        paddingHorizontal: 16,
+        paddingVertical: 10,
+        textAlign: 'right',
+    },
+    detailImage: {
+        height: 200,
+        width: 260,
+        // width: '100%',
+        // padding: 20,
+        // resizeMode: 'cover',
+        borderRadius: 5,
     },
     thumbnailContainer: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
+        marginHorizontal: 14,
     },
     thumbnail: {
         width: 70,
-        height: 70,
+        height: 60,
         resizeMode: 'cover',
-        margin: 8,
+        margin: 6,
         borderRadius: 5,
         borderColor: 'lightsalmon',
-    }
-
+    },
+    imageContainer: {
+        display: "flex",
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+	spinner: {
+		flex: 3,
+        marginTop: 20,
+		marginRight: 10,
+		minWidth: 60,
+	},
+    cartButton: {
+        flex: 5,
+        marginTop: 20,
+        marginHorizontal: 10,
+        // width: 80,
+        height: 50,
+        alignItems: "center",
+        backgroundColor: "green",
+        borderWidth: 2,
+        borderRadius: 10,
+    },
 });
 
 export default styles;

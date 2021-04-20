@@ -36,7 +36,7 @@ export default function App() {
                     component={Home}
                 />
                 <Stack.Screen
-                    name="Home_to_Plants"
+                    name="Plants"
                     options={{
                         title: 'Plants',
                         headerTitleStyle: {
@@ -45,10 +45,10 @@ export default function App() {
                         }
                     }}
                     component={Plants}
-                    // options={ ( {route} ) => ({title: route.params.title})}
+                    options={ ( {route} ) => ({title: route.params.title})}
                 />
                 <Stack.Screen
-                    name="Home_to_Order"
+                    name="ViewOrder"
                     component={Order}
                     options={ ( {route} ) => ({title: route.params.title})}
                 />
