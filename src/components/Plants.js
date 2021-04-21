@@ -23,8 +23,36 @@ const Plants = ( {navigation, route} ) => {
         </View>
     )
 };
+function sunInfo(flower) {
+  let color;
+  let emoji;
+  switch (flower.sun) {
+    case "full sun":
+      color = "gold"
+      emoji = 0x2600;
+      break;
+    case "filtered sun":
+      color = "orange";
+      emoji = 0x26C5;
+      break;
+    case "shade":
+      color = "indigo"; 
+      emoji = 0x2601;
+      break;
+    case "part shade":
+      color = "slateblue";
+      emoji = 0x26C5;
+      break;
+    default:
+      color = "";
+      emoji = "";
+      break;
+  }
+  return [flower.sun, color, emoji];
+}
 
 const PlantCard = ({item, index}) => {
+    const [sunShade, color, emoji] = sunInfo(item);
     let varietiesString;
     if (item.variety.length > 1) {
         varietiesString = item.variety.length + " varieties";
@@ -45,7 +73,7 @@ const PlantCard = ({item, index}) => {
                         source={item.variety[0].image}
                     />
                 </View>
-                <Text style={styles.itemDescription}>{item.sun}</Text>
+                <Text style={[styles.itemDescription, {color: color}]}>{item.sun + " " + String.fromCodePoint(emoji)}</Text>
                 <Text style={styles.itemTitle}>{item.name}</Text>
                 <Text style={styles.itemDescription}>{varietiesString}</Text>
                 <Text style={styles.itemDescription}>{priceString}</Text>
