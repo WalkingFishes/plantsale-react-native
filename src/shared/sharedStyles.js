@@ -242,6 +242,23 @@ const styles = StyleSheet.create({
 		marginHorizontal: 10,
 		minWidth: 60,
 	},
+    col: {
+		flex: 1,
+		marginBottom: 20,
+		flexDirection: "row",
+		alignItems: "center",
+		textAlign: "left",
+		textAlignVertical: "center",
+	},
+    text: {
+        flex: 1,
+        marginLeft: 50,
+    },
+    spinner2: {
+        flex: 1,
+        marginRight: 50,
+        minWidth: 100,
+    },
     cartButton: {
         flex: 5,
         marginTop: 20,

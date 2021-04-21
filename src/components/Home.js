@@ -1,5 +1,5 @@
-import React from 'react';
-import { SafeAreaView, View, Text, Image, ImageBackground, Pressable } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, View, Text, Image, ImageBackground, Pressable, TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import styles from '../shared/sharedStyles';
 import { PLANTS } from '../shared/plants';
@@ -7,13 +7,19 @@ import { Footer } from '../components/Footer';
 import AppStatusBar from '../components/AppStatusBar';
 
 const Home = ( {navigation} ) => {
+    const [cart, setCart] = useState([]);
+
+    const addToCart = (iplant, ivarietyIndex, iquantity) => {
+        setCart([{plant: iplant, varietyIndex: ivarietyIndex, quantity: iquantity}]);
+    };
+
     const plantGroups = PLANTS.map((group) => {
         const groupTitle = group.title + " (" + group.data.length + ")";
         return (
             <Pressable
                 key={group.group}
                 style={styles.groupContainer}
-                onPress={()=> { navigation.navigate( "Plants", { title: groupTitle, plantGroup: group.group, }) }} >
+                onPress={()=> { navigation.navigate( "Plants", { title: groupTitle, plantGroup: group.group, addToCart: addToCart }) }} >
                 <View>
                     <View style={styles.groupImageContainer}>
                         <Image
@@ -40,13 +46,13 @@ const Home = ( {navigation} ) => {
                     </View>
                 </ImageBackground>
                 {plantGroups}
-                {/* <TouchableOpacity
+                <TouchableOpacity
                     style={styles.touchableView}
-                    onPress={()=> { navigation.navigate("ViewOrder", {title: "My Order"}) }} >
+                    onPress={()=> { navigation.navigate("Cart", {title: "Cart", cart: cart}) }} >
                     <View>
-                        <Text style={styles.touchableText}>View Order</Text>
+                        <Text style={styles.touchableText}>View Cart</Text>
                     </View>
-                </TouchableOpacity> */}
+                </TouchableOpacity>
                 <Footer />
             </ScrollView>
         </SafeAreaView>

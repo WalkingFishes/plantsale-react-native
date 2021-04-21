@@ -7,7 +7,8 @@ import { Footer } from '../components/Footer';
 
 function PlantDetail ( {navigation, route} ) {
 
-    let item = route.params.plant;
+    const addToCart = route.params.addToCart;
+    const item = route.params.plant;
     const [quantity, setQuantity] = useState(1);
     const [varietyIndex, changeVarietyIndex] = useState(0);
 
@@ -33,7 +34,8 @@ function PlantDetail ( {navigation, route} ) {
         );
     });
 
-    const addToCart = (plant) => {
+    const addToCartWithAlert = (plant) => {
+        addToCart(plant, varietyIndex, quantity);
         Alert.alert(
             "Add to Cart",
             quantity + " " + plant.name + " " + plant.variety[varietyIndex].name + " added to cart",
@@ -65,11 +67,13 @@ function PlantDetail ( {navigation, route} ) {
                         <InputSpinner
                             value={quantity}
                             style={styles.spinner}
+                            rounded={false}
+                            showBorder={true}
                             onChange={(qty) => { setQuantity(qty)}}
                         />
                         <TouchableOpacity
                             style={styles.cartButton}
-                            onPress={()=> { addToCart(item) }} >
+                            onPress={()=> { addToCartWithAlert(item, varietyIndex, quantity) }} >
                             <View>
                                 <Text style={styles.touchableText}>Add to Cart</Text>
                             </View>

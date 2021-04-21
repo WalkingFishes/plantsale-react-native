@@ -4,9 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './src/components/Home';
-import Order from './src/components/Order';
+import Cart from './src/components/Cart';
 import Plants from './src/components/Plants';
 import PlantDetail from './src/components/PlantDetail';
+import { PLANTS } from './src/shared/plants';
 
 const Stack = createStackNavigator();
 
@@ -26,36 +27,22 @@ export default function App() {
                 }}>
                 <Stack.Screen
                     name="App_to_Home"
-                    options={{
-                        title: 'Home',
-                        headerTitleStyle: {
-                            fontWeight: 'bold',
-                            fontSize: 30
-                        }
-                    }}
+                    options={ ( {route} ) => ({title: "Home"})}
                     component={Home}
                 />
                 <Stack.Screen
                     name="Plants"
-                    options={{
-                        title: 'Plants',
-                        headerTitleStyle: {
-                            fontWeight: 'bold',
-                            fontSize: 30
-                        }
-                    }}
                     component={Plants}
-                    options={ ( {route} ) => ({title: route.params.title})}
-                />
-                <Stack.Screen
-                    name="ViewOrder"
-                    component={Order}
                     options={ ( {route} ) => ({title: route.params.title})}
                 />
                 <Stack.Screen
                     name="PlantDetail"
                     component={PlantDetail}
                     options={ ( {route} ) => ({title: route.params.title})}
+                />
+                <Stack.Screen
+                    name="Cart"
+                    component={Cart}
                 />
             </Stack.Navigator>
         </NavigationContainer>
