@@ -22,9 +22,19 @@ export default function App() {
         console.log("After add: " + cart);
     };
 
+    const updateCart = (iplant, ivarietyIndex, iquantity) => {
+        console.log("Before update: " + cart);
+        setCart(cart.concat({plant: iplant, varietyIndex: ivarietyIndex, quantity: iquantity}));
+        console.log("After update: " + cart);
+    };
+
+    const removeFromCart = (removeIndex) => {
+        setCart(cart.filter((value, index) => index !== removeIndex ));
+    };
+
     return (
 
-        <CartContext.Provider value={{cart: cart, addToCart: addToCart}}>
+        <CartContext.Provider value={{cart: cart, addToCart: addToCart, updateCart: updateCart, removeFromCart: removeFromCart}}>
 
         <NavigationContainer>
             <Stack.Navigator
@@ -44,7 +54,7 @@ export default function App() {
                         title: "Home",
                         headerRight: () => (
                             <TouchableOpacity
-                                onPress={()=> { navigation.navigate("Cart", {title: "Cart", cart: cart}) }} >
+                                onPress={()=> { navigation.navigate("Cart", {title: "Cart"}) }} >
                                 <Text>View Cart</Text>
                             </TouchableOpacity>
                         ),
@@ -57,7 +67,7 @@ export default function App() {
                         title: route.params.title,
                         headerRight: () => (
                             <TouchableOpacity
-                                onPress={()=> { navigation.navigate("Cart", {title: "Cart", cart: cart}) }} >
+                                onPress={()=> { navigation.navigate("Cart", {title: "Cart"}) }} >
                                 <Text>View Cart</Text>
                             </TouchableOpacity>
                         ),
@@ -70,7 +80,7 @@ export default function App() {
                         title: route.params.title,
                         headerRight: () => (
                             <TouchableOpacity
-                                onPress={()=> { navigation.navigate("Cart", {title: "Cart", cart: cart}) }} >
+                                onPress={()=> { navigation.navigate("Cart", {title: "Cart"}) }} >
                                 <Text>View Cart</Text>
                             </TouchableOpacity>
                         ),

@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { ScrollView, View, Text, Image, Pressable, TouchableOpacity, Alert } from 'react-native';
 import InputSpinner from 'react-native-input-spinner';
 import styles from '../shared/sharedStyles';
 import { PRICING } from '../shared/pricing';
 import { PLANTS } from '../shared/plants';
 import { Footer } from '../components/Footer';
+import CartContext from '../components/CartContext';
 
-const CartItem = ({ordPlant}) => {
+
+const CartItem = ({ordPlant, idx}) => {
+    const cartFunc = useContext(CartContext);
     const plant = ordPlant.plant;
     const varietyIndex = ordPlant.varietyIndex;
     const [quantity, setQuantity] = useState(ordPlant.quantity);
@@ -18,6 +21,18 @@ const CartItem = ({ordPlant}) => {
     const plantImage = plant.variety[varietyIndex].image;
     const plantVariety = plant.variety[varietyIndex].name;
     const totalString = "Total: $" + (pricingGroup.container.price * quantity/100).toFixed(2);
+
+    const removeFromCartWithAlert = () => {
+        cartFunc.removeFromCart(idx);
+        Alert.alert(
+            "Remove from Cart",
+            plant.name + " " + plant.variety[varietyIndex].name + " removed from cart",
+            [
+                { text: "OK", onPress: () => console.log("OK Pressed") }
+            ]
+        );
+    }
+
     return (
         <View style={styles.detailContainer}>
             <View style={styles.imageContainer}>
@@ -46,7 +61,7 @@ const CartItem = ({ordPlant}) => {
             <Text style={styles.detailDescription}>{totalString}</Text>
             <TouchableOpacity
                 style={styles.cartButton}
-                onPress={()=> {console.log("Plant removed."); }} >
+                onPress={()=> {removeFromCartWithAlert(); }} >
                 <View>
                     <Text style={styles.touchableText}>Remove</Text>
                 </View>
@@ -57,13 +72,15 @@ const CartItem = ({ordPlant}) => {
 const CartItems = ({cart}) => {
     return cart.map((ordPlant, index) => {
         return (
-            <CartItem key={index} ordPlant={ordPlant}/>
+            <CartItem key={index} ordPlant={ordPlant} idx={index}/>
         );
     });
 }
 
 const Cart = ( {navigation, route} ) => {
-    const cart = route.params.cart;
+    // const cart = route.params.cart;
+    const cartFunc = useContext(CartContext);
+    const cart = cartFunc.cart;
 
     return (
             <ScrollView style={styles.detailPage}>
