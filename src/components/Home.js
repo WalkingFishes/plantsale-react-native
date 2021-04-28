@@ -7,7 +7,6 @@ import { Footer } from '../components/Footer';
 import AppStatusBar from '../components/AppStatusBar';
 
 const Home = ( {navigation, route} ) => {
-    const addToCart = route.params.addToCart;
 
     const plantGroups = PLANTS.map((group) => {
         const groupTitle = group.title + " (" + group.data.length + ")";
@@ -15,7 +14,7 @@ const Home = ( {navigation, route} ) => {
             <Pressable
                 key={group.group}
                 style={styles.groupContainer}
-                onPress={()=> { navigation.navigate( "Plants", { title: groupTitle, plantGroup: group.group, addToCart: addToCart }) }} >
+                onPress={()=> { navigation.navigate( "Plants", { title: groupTitle, plantGroup: group.group }) }} >
                 <View>
                     <View style={styles.groupImageContainer}>
                         <Image

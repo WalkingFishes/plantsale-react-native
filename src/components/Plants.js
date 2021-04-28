@@ -8,15 +8,14 @@ import { Footer } from './Footer';
 
 const Plants = ( {navigation, route} ) => {
     const type = route.params.plantGroup;
-    const addToCart = route.params.addToCart;
-    console.log(route);
+    // console.log(route);
     const plants=PLANTS.filter((group) => group.group === type);
     return (
         <View>
             <FlatList
                 data={plants[0].data}
                 renderItem={({item, index}) => 
-                <Pressable onPress={() => navigation.navigate('PlantDetail', {title: item.name, plant: item, addToCart: addToCart})}> 
+                <Pressable onPress={() => navigation.navigate('PlantDetail', {title: item.name, plant: item})}> 
                     <PlantCard item={item} index={index}/> 
                 </Pressable>}
                 keyExtractor={(item, index) => index.toString()}

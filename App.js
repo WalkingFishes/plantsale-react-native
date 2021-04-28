@@ -9,16 +9,22 @@ import Cart from './src/components/Cart';
 import Plants from './src/components/Plants';
 import PlantDetail from './src/components/PlantDetail';
 
+import CartContext from './src/components/CartContext';
+
 const Stack = createStackNavigator();
 
 export default function App() {
     const [cart, setCart] = useState([]);
 
     const addToCart = (iplant, ivarietyIndex, iquantity) => {
-        setCart([{plant: iplant, varietyIndex: ivarietyIndex, quantity: iquantity}]);
+        console.log("Before add: " + cart);
+        setCart(cart.concat({plant: iplant, varietyIndex: ivarietyIndex, quantity: iquantity}));
+        console.log("After add: " + cart);
     };
 
     return (
+
+        <CartContext.Provider value={{cart: cart, addToCart: addToCart}}>
 
         <NavigationContainer>
             <Stack.Navigator
@@ -33,13 +39,12 @@ export default function App() {
                 <Stack.Screen
                     name="Home"
                     component={Home}
-                    initialParams={{cart: cart, addToCart: addToCart}}
+                    initialParams={{cart: cart}}
                     options={({ navigation, route }) => ({
                         title: "Home",
-                        addToCart: addToCart,
                         headerRight: () => (
                             <TouchableOpacity
-                                onPress={()=> { navigation.navigate("Cart", {title: "Cart", cart: cart, addToCart: addToCart}) }} >
+                                onPress={()=> { navigation.navigate("Cart", {title: "Cart", cart: cart}) }} >
                                 <Text>View Cart</Text>
                             </TouchableOpacity>
                         ),
@@ -77,6 +82,7 @@ export default function App() {
                 />
             </Stack.Navigator>
         </NavigationContainer>
+        </CartContext.Provider>
   );
 }
 

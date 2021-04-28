@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { ScrollView, View, Text, Image, Pressable, TouchableOpacity, Alert } from 'react-native';
 import InputSpinner from 'react-native-input-spinner';
 import styles from '../shared/sharedStyles';
 import { PRICING } from '../shared/pricing';
 import { Footer } from '../components/Footer';
+import CartContext from '../components/CartContext';
 
 function PlantDetail ( {navigation, route} ) {
 
-    const addToCart = route.params.addToCart;
+    const cartFunc = useContext(CartContext);
     const item = route.params.plant;
     const [quantity, setQuantity] = useState(1);
     const [varietyIndex, changeVarietyIndex] = useState(0);
@@ -35,7 +36,7 @@ function PlantDetail ( {navigation, route} ) {
     });
 
     const addToCartWithAlert = (plant) => {
-        addToCart(plant, varietyIndex, quantity);
+        cartFunc.addToCart(plant, varietyIndex, quantity);
         Alert.alert(
             "Add to Cart",
             quantity + " " + plant.name + " " + plant.variety[varietyIndex].name + " added to cart",
