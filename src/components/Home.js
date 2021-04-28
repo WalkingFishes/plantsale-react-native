@@ -6,12 +6,8 @@ import { PLANTS } from '../shared/plants';
 import { Footer } from '../components/Footer';
 import AppStatusBar from '../components/AppStatusBar';
 
-const Home = ( {navigation} ) => {
-    const [cart, setCart] = useState([]);
-
-    const addToCart = (iplant, ivarietyIndex, iquantity) => {
-        setCart([{plant: iplant, varietyIndex: ivarietyIndex, quantity: iquantity}]);
-    };
+const Home = ( {navigation, route} ) => {
+    const addToCart = route.params.addToCart;
 
     const plantGroups = PLANTS.map((group) => {
         const groupTitle = group.title + " (" + group.data.length + ")";

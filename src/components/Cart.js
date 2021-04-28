@@ -6,7 +6,7 @@ import { PRICING } from '../shared/pricing';
 import { PLANTS } from '../shared/plants';
 import { Footer } from '../components/Footer';
 
-const CartItem = ({key, ordPlant}) => {
+const CartItem = ({ordPlant}) => {
     const plant = ordPlant.plant;
     const varietyIndex = ordPlant.varietyIndex;
     const [quantity, setQuantity] = useState(ordPlant.quantity);

@@ -66,7 +66,6 @@ const PlantCard = ({item, index}) => {
     )[0];
     const priceString = "Price - $" + (pricingGroup.container.price / 100).toFixed(2);
     const containerString = pricingGroup.container.description;
-        // item.variety.length + " varieties";
     return (
             <View key={index} style={styles.itemContainer}>
                 <View style={styles.imageContainer}>
