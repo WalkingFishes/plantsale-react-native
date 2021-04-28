@@ -13,23 +13,37 @@ import CartContext from './src/components/CartContext';
 
 const Stack = createStackNavigator();
 
+function plantInCart(cart, plant, varietyIndex) {
+    let exists = cart.filter(
+        (item) => (item.plant === plant && item.varietyIndex === varietyIndex)
+    );
+
+    return exists;
+}
+
 export default function App() {
     const [cart, setCart] = useState([]);
 
     const addToCart = (iplant, ivarietyIndex, iquantity) => {
-        console.log("Before add: " + cart);
-        setCart(cart.concat({plant: iplant, varietyIndex: ivarietyIndex, quantity: iquantity}));
-        console.log("After add: " + cart);
+        let existingPlant = plantInCart(cart, iplant, ivarietyIndex);
+        let newQty = iquantity;
+        let newCart = cart.filter((item) => !(item.plant === iplant && item.varietyIndex === ivarietyIndex));
+        if (existingPlant.length > 0) {
+            newCart = cart.filter((item) => !(item.plant === iplant && item.varietyIndex === ivarietyIndex));
+            newQty += existingPlant[0].quantity;
+        }
+        newCart.push({plant: iplant, varietyIndex: ivarietyIndex, quantity: newQty});
+        setCart(newCart);
     };
 
     const updateCart = (iplant, ivarietyIndex, iquantity) => {
-        console.log("Before update: " + cart);
-        setCart(cart.concat({plant: iplant, varietyIndex: ivarietyIndex, quantity: iquantity}));
-        console.log("After update: " + cart);
+        let newCart = cart.filter((item) => !(item.plant === iplant && item.varietyIndex === ivarietyIndex));
+        newCart.push({plant: iplant, varietyIndex: ivarietyIndex, quantity: iquantity});
+        setCart(newCart);
     };
 
-    const removeFromCart = (removeIndex) => {
-        setCart(cart.filter((value, index) => index !== removeIndex ));
+    const removeFromCart = (iplant, ivarietyIndex) => {
+        setCart(cart.filter((item) => !(item.plant === iplant && item.varietyIndex === ivarietyIndex)));
     };
 
     return (

@@ -23,7 +23,7 @@ const CartItem = ({ordPlant, idx}) => {
     const totalString = "Total: $" + (pricingGroup.container.price * quantity/100).toFixed(2);
 
     const removeFromCartWithAlert = () => {
-        cartFunc.removeFromCart(idx);
+        cartFunc.removeFromCart(plant, varietyIndex);
         Alert.alert(
             "Remove from Cart",
             plant.name + " " + plant.variety[varietyIndex].name + " removed from cart",
@@ -54,7 +54,7 @@ const CartItem = ({ordPlant, idx}) => {
                     showBorder={true}
                     onChange={(qty) => { 
                         setQuantity(qty);
-                        console.log("Quantity updated to " + qty);
+                        cartFunc.updateCart(plant, varietyIndex, qty);
                     }}
                 />
             </View>
@@ -78,7 +78,6 @@ const CartItems = ({cart}) => {
 }
 
 const Cart = ( {navigation, route} ) => {
-    // const cart = route.params.cart;
     const cartFunc = useContext(CartContext);
     const cart = cartFunc.cart;
 
